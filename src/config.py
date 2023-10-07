@@ -21,10 +21,10 @@ class Settings(BaseSettings):
     THREADS_COUNT: int = Field(env='THREADS_COUNT', default=1)
     PROXY_FILE: str | None = Field(env='PROXY_FILE', default=None)
     DEVICE_MODELS: list[str] = Field(env='DEVICE_MODELS', default=[])
-    SAVE_WIREGUARD_VARIABLES: bool = Field(env='SAVE_WIREGUARD_VARIABLES', default=False)
+    SAVE_WIREGUARD_VARIABLES: bool = Field(env='SAVE_WIREGUARD_VARIABLES', default=True)
     DELAY: int = Field(env='DELAY', default=25)
     OUTPUT_FILE: str = Field(env='OUTPUT_FILE', default='output.txt')
-    OUTPUT_FORMAT: str = Field(env='OUTPUT_FORMAT', default='{key} | {referral_count}')
+    OUTPUT_FORMAT: str = Field(env='OUTPUT_FORMAT', default='{key} | {referral_count} | {private_key} | {peer_endpoint} | {peer_public_key} | {interface_addresses}')
     RETRY_COUNT: int = Field(env='RETRY_COUNT', default=3)
 
     class Config:
